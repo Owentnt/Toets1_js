@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oefening toets 1 2023-2024</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style>
+        .favoriteAttraction {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+<div class="m-2">
+    <h1>Attracties</h1>
+    <form>
+        <div class="input-group mb-3">
+            <div class="input-group">
+                <span class="input-group-text">hoogte</span>
+                <input type="number" id="height" class="form-control" placeholder="hoogte">
+                <button class="btn btn-outline-primary" type="button" onclick="filterHeight()">filter hoogte</button>
+            </div>
+
+        </div>
+    </form>
+    <div id="message" class="alert alert-primary"></div>
+    <div id="list" class="container-fluid"></div>
+</div>
+<script src="oefening.js"></script>
+
+
+</body>
+</html>
