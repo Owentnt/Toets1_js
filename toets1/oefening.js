@@ -15,17 +15,27 @@ const performances = [
 let favorites = ["Arctic Monkeys", "Billie Eilish"];
 
 function showOnePerformance(performance) {
-    return `<div class="col col-sm-6 col-md-3">
-                <div class="card p-2 m-1">
+    if (favorites.includes(performance.bandName)) {
+        return `<div class="col col-sm-6 col-md-3" onclick="toggleFavorite('${performance.bandName}')">
+                <div class="card p-2 m-1 favoritePerformance">
                     <strong>${performance.bandName}</strong>
-                    ${performance.genre} 
+                    ${performance.genre}
                     <strong>${performance.stage + " " + performance.performanceTime}</strong>
                 </div> 
             </div>`;
-}
+
+    } else {
+        return `<div class="col col-sm-6 col-md-3" onclick="toggleFavorite('${performance.bandName}')">
+                <div class="card p-2 m-1">
+                    <strong>${performance.bandName}</strong>
+                    ${performance.genre}
+                    <strong>${performance.stage + " " + performance.performanceTime}</strong>
+                </div> 
+            </div>`;
+
+    }
 
 
-//oefening 1: toon alle eigenschappen van de performances zoals in de screenshot
 //oefening 2: filters
 //oefening 3: als performance voorkomt in de favorites dan toon je deze in een andere kleur - gebruik de css class favoritePerformance
 //oefening 4: als user op een performance klikt die niet in de favorites zit: nieuwe favorites lijst met de performance erbij
@@ -33,11 +43,16 @@ function showOnePerformance(performance) {
 //oefening 5: als user op een performance klikt die in de favorites zit: nieuwe favorites lijst zonder deze performance
 
 
-function showAttractionsInUI() {
-    const attractionsHTML = performances
-        .map(entry => showOnePerformance(entry))
-        .join("");
-    listEl.innerHTML = `<div class="row">${attractionsHTML}</div>`;
+    function showAttractionsInUI() {
+        const attractionsHTML = performances
+            .map(entry => showOnePerformance(entry))
+            .join("");
+        listEl.innerHTML = `<div class="row">${attractionsHTML}</div>`;
+    }
+    let checked = true
+    function toggleFavorite() {
+        checked = !favorites.includes(performance.bandName);
+
+    }
 }
 
-showAttractionsInUI();
