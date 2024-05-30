@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Oefening toets 1 2023-2024</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+            crossorigin="anonymous"
+    />
     <style>
-        .favoriteAttraction {
-            background-color: aqua;
+        .favoritePerformance {
+            background-color: mediumslateblue;
+            color: white;
         }
     </style>
 </head>
 <body>
-
 <div class="m-2">
-    <h1>Attracties</h1>
+    <h1>Lineup</h1>
     <form>
         <div class="input-group mb-3">
-            <div class="input-group">
-                <span class="input-group-text">hoogte</span>
-                <input type="number" id="height" class="form-control" placeholder="hoogte">
-                <button class="btn btn-outline-primary" type="button" onclick="filterHeight()">filter hoogte</button>
+            <div class="input-group mb-1">
+                <span class="input-group-text">stage</span>
+                <input
+                        type="text"
+                        id="stage"
+                        class="form-control"
+                        placeholder="stage"
+                        oninput="filterStage()"
+                />
             </div>
-
+            <div class="input-group">
+                <span class="input-group-text">genre</span>
+                <input
+                        type="text"
+                        id="genre"
+                        class="form-control"
+                        placeholder="genre"
+                        oninput="filterGenre()"
+                />
+            </div>
         </div>
     </form>
     <div id="message" class="alert alert-primary"></div>
     <div id="list" class="container-fluid"></div>
 </div>
 <script src="oefening.js"></script>
-
-
 </body>
 </html>
